@@ -1,1 +1,8 @@
+#Facebook credentials
 FacebookToken = """EAAcgB0tzd2cBAEuLGGZAKKUBVtCMUstfsoz9nFIkop3nCZAVkrZCgvFpgptZAhgtJ0tfXDetzgRm5dhfBZCxG1ZBa8ybnHeQcbpiDOLtS9OMqTuIvz3NzqFqFexcY2L9W1A7HnxPSgz660lDZC2sB4bolZCZAvID7tEMeY1A25vTTKQZDZD"""
+
+#Twitter credentials
+Twitter_consumer_key = "MDW02nMPJrjzOYyGAEqbGShFP"
+Twitter_consumer_secret = "bu1m3eVgX5cPAiTu6KcranLeJ6NPdX93zA2qNhqkFbeNmjAHeZ" 
+Twitter_access_token = "4816940682-NW4LejaGeoKMUe2thHrYKWoiAvWSh9DqmFvsqxJ"
+Twitter_access_token_secret = "RLOfODNPnM0AuSrR6XGnIxhdM49NYR67PAKtqIe0TzvrA" 
