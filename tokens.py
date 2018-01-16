@@ -6,3 +6,8 @@ Twitter_consumer_key = "MDW02nMPJrjzOYyGAEqbGShFP"
 Twitter_consumer_secret = "bu1m3eVgX5cPAiTu6KcranLeJ6NPdX93zA2qNhqkFbeNmjAHeZ" 
 Twitter_access_token = "4816940682-NW4LejaGeoKMUe2thHrYKWoiAvWSh9DqmFvsqxJ"
 Twitter_access_token_secret = "RLOfODNPnM0AuSrR6XGnIxhdM49NYR67PAKtqIe0TzvrA" 
+
+
+#Flickr
+Flickr_key = "b4e913643345419ed0c9485ead79ffcb"
+Flickr_secret = "9b887f70c500540e"
