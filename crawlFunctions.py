@@ -37,4 +37,19 @@ def getFlickr():
 	#link = "https://www.flickr.com/photos/" + photo["photos"]["photo"][0]["owner"] + "/" + photo["photos"]["photo"][0]["id"]  
 	#print(link)
 
-getFlickr()
+def getGplus():
+	from apiclient.discovery import build
+
+	api_key = GooglePlus_key
+
+	service = build("plus", "v1", developerKey = api_key)
+
+	activities_resource = service.activities()
+	activities_document = activities_resource.search(maxResults=10, orderBy="best", query="arduino").execute()
+
+	if "items" in activities_document:
+		print("got page with %d" % len(activities_document["items"]))
+		for activity in activities_document["items"]:
+			print(activity["url"])
+			#print(activity["id"], activity["object"]["content"])
+
