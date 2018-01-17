@@ -3,7 +3,7 @@ import json
 from time import sleep
 from tokens import *
 import tweepy
-
+import flickrapi
 
 def fbPlaces(place):
 	query = place + "&type=place&/likes"
@@ -26,3 +26,15 @@ def getTweets():
 		print("*************************")
 		print(r.full_text)
 		sleep(5)
+
+def getFlickr():
+	flickr = flickrapi.FlickrAPI(Flickr_key, Flickr_secret)
+	# to create link: flickr..../owner/id
+	photo = flickr.photos_search(api_key=Flickr_key,text="athens",per_page=2,page=1,format="parsed-json")
+	print("***********************************")
+	#print(photo)
+	#print(photo["photos"]["photo"][0]["id"])
+	#link = "https://www.flickr.com/photos/" + photo["photos"]["photo"][0]["owner"] + "/" + photo["photos"]["photo"][0]["id"]  
+	#print(link)
+
+getFlickr()
