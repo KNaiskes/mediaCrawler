@@ -11,3 +11,6 @@ Twitter_access_token_secret = "RLOfODNPnM0AuSrR6XGnIxhdM49NYR67PAKtqIe0TzvrA"
 #Flickr
 Flickr_key = "b4e913643345419ed0c9485ead79ffcb"
 Flickr_secret = "9b887f70c500540e"
+
+#G+
+GooglePlus_key = "AIzaSyCXru8PkSK1ItS5sMMJSQNBh_b6epzmsbE"
