@@ -53,3 +53,25 @@ def getGplus():
 			print(activity["url"])
 			#print(activity["id"], activity["object"]["content"])
 
+def getReddit():
+	import praw
+
+	kclient_id = "kJRrYyBiQgIXmg"
+	kclient_secret = "z8HqW-DEz0E-avV9rWCPYaLA4Sc"
+	kusername = "knBot"
+	kpassword = "search4loop"
+	kuser_agent = "hello_internet"
+
+	reddit = praw.Reddit(client_id = kclient_id,
+			client_secret = kclient_secret,
+			username = kusername,
+			password = kpassword,
+			user_agent = kuser_agent)
+
+	#print(reddit.user.me())
+	reddit.read_only = True
+	print(reddit.read_only)
+	for submission in reddit.subreddit("learnpython").hot(limit=10):
+		print(submission.url) #title
+
+getReddit()
