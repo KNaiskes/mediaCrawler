@@ -14,3 +14,12 @@ Flickr_secret = "9b887f70c500540e"
 
 #G+
 GooglePlus_key = "AIzaSyCXru8PkSK1ItS5sMMJSQNBh_b6epzmsbE"
+
+#Reddit
+
+Reddit_client_id = "kJRrYyBiQgIXmg"
+Reddit_client_secret = "z8HqW-DEz0E-avV9rWCPYaLA4Sc"
+Reddit_username = "knBot"
+Reddit_password = "search4loop"
+Reddit_userAgent = "hello_internet"
+
