@@ -6,12 +6,16 @@ from tokens import *
 def fbPlaces(place):
 	query = place + "&type=place&/likes"
 
-	#get the first 10 results
-	for i in range(10):
-		respond = requests.get("https://graph.facebook.com/search?access_token=" + FacebookToken+ "&q=" + query)
-		respond = json.loads(respond.text)["data"][i]["name"]
-		print(respond) #write to a file later
-		sleep(2) #wait some time just to not get banned
+	with open("fbResults.txt", "w") as file:
+		#get the first 10 results
+		for i in range(10):
+			respond = requests.get("https://graph.facebook.com/search?access_token=" + FacebookToken+ "&q=" + query)
+			respond = json.loads(respond.text)["data"][i]["id"]
+			respond = "https://www.facebook.com/" + respond
+			#print(respond) #write to a file later
+			#respond = respond.replace(" ", "")
+			file.write(respond + "\n")
+			#sleep(0.5) #wait some time just to not get banned
 
 
 def getTweets(tweet):
@@ -19,25 +23,26 @@ def getTweets(tweet):
 	tweet = "#"+tweet
 	auth = tweepy.OAuthHandler(Twitter_consumer_key, Twitter_consumer_secret)
 	auth.set_access_token(Twitter_access_token, Twitter_access_token_secret)
-	
 	api = tweepy.API(auth)
-	result = api.search(q=tweet, count=10, result_type = "latest", tweet_mode="extended")
-	for r in result:
-		print("*************************")
-		print(r.full_text)
-		sleep(5)
+	with open("twitterResults.txt", "w") as file:
+		for t in tweepy.Cursor(api.search, q=tweet, result_type="latest").items(10):
+				result = "https://twitter.com/statuses/" + str(t.id)
+				file.write(result + "\n")
 
 def getFlickr(keyword):
 	import flickrapi
 	flickr = flickrapi.FlickrAPI(Flickr_key, Flickr_secret)
 	# to create link: flickr..../owner/id
 	photo = flickr.photos_search(api_key=Flickr_key,text=keyword,per_page=10,page=1,format="parsed-json")
-	print("***********************************")
+	#print("***********************************")
 	#print(photo)
 	#print(photo["photos"]["photo"][0]["id"])
-	for i in range(0,9):
-		link = "https://www.flickr.com/photos/" + photo["photos"]["photo"][i]["owner"] + "/" + photo["photos"]["photo"][i]["id"]  
-		print(link)
+	with open ("flickrResults.txt", "w") as file:
+		for i in range(0,9):
+			link = "https://www.flickr.com/photos/" + photo["photos"]["photo"][i]["owner"] + "/" + photo["photos"]["photo"][i]["id"]  
+			#print(link)
+			file.write(link + "\n")
+
 
 def getGplus(keyword):
 	from apiclient.discovery import build
@@ -49,11 +54,13 @@ def getGplus(keyword):
 	activities_resource = service.activities()
 	activities_document = activities_resource.search(maxResults=10, orderBy="best", query=keyword).execute()
 
-	if "items" in activities_document:
-		print("got page with %d" % len(activities_document["items"]))
-		for activity in activities_document["items"]:
-			print(activity["url"])
-			#print(activity["id"], activity["object"]["content"])
+	with open("gplusResults.txt", "w") as file:
+		if "items" in activities_document:
+			#print("got page with %d" % len(activities_document["items"]))
+			for activity in activities_document["items"]:
+				#print(activity["url"])
+				#print(activity["id"], activity["object"]["content"])
+				file.write(activity["url"]+ "\n")
 
 def getReddit(keyword):
 	import praw
@@ -66,6 +73,8 @@ def getReddit(keyword):
 
 	#print(reddit.user.me())
 	reddit.read_only = True
-	print(reddit.read_only)
-	for submission in reddit.subreddit(keyword).hot(limit=10):
-		print(submission.url) #title
+	#print(reddit.read_only)
+	with open("redditResults.txt", "w") as file:
+		for submission in reddit.subreddit(keyword).hot(limit=10):
+			#print(submission.url) #title
+			file.write(submission.url + "\n")
