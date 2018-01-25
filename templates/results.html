@@ -2,11 +2,15 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, inital-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="/static/dashboard.css">
+		<link rel="stylesheet" type="text/css" href="/static/results.css">
 		<title> Login </title>
 	</head>
 
 	<body>
 		<h1> works </h1>
+		<h3> Facebook </h3> 
+		{% for f in fb %}
+		<h4><a href = "{{f}}">ONE</a> </h4>
+		{% endfor %}
 	</body>
 </html>
