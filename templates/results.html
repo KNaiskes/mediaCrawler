@@ -7,10 +7,39 @@
 	</head>
 
 	<body>
-		<h1> works </h1>
+		<p>
 		<h3> Facebook </h3> 
 		{% for f in fb %}
-		<h4><a href = "{{f}}">ONE</a> </h4>
-		{% endfor %}
+		<h4><a href="{{f}}">Facebook</a></h4>
+		{%endfor%}
+		</p>
+		<p>
+		<h3> Twitter </h3>
+		{% for t in tweets %}
+		<h4><a href="{{t}}">Twitter</a></h4>
+		{%endfor%}
+		</p>
+
+		<p>
+		<h3>Flickr</h3>
+		{% for fl in flickr%}
+		<h4><a href="{{fl}}">Flickr</a></h4>
+		{%endfor%}
+		</p>
+
+		<p>
+		<h3>Google Plus</h3>
+		{% for g in gplus %}
+		<h4><a href="{{g}}">Google+</a></h4>
+		{%endfor%}
+		</p>
+
+		<p>
+		<h3>Reddit</h3>
+		{% for r in reddit %}
+		<h4><a href="{{r}}">Reddit</a></h4>
+		{%endfor%}
+		</p>
+
 	</body>
-</html>
+	</html>

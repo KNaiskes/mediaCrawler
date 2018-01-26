@@ -1,6 +1,6 @@
 from flask import Flask, render_template,redirect,request,url_for,session
 from db.database import *
-import os.path
+#import os.path
 #from os import makedirs
 #from os import chdir
 from crawlFunctions import *
@@ -35,6 +35,7 @@ def search():
 	global keyword
 	keyword = request.form.get("keyword")
 	print("Here is the keyword:", keyword)
+
 	return render_template("search.html")
 				
 @app.route("/results")
@@ -47,7 +48,7 @@ def results():
 	flickr = getFlickr(keyword)
 	gplus = getGplus(keyword)
 	reddit = getReddit(keyword)
-	return render_template("results.html",fb=fb)
+	return render_template("results.html",fb=fb,tweets=tweets,flickr=flickr,gplus=gplus,reddit=reddit)
 
 
 if __name__ == "__main__":
