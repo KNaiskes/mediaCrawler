@@ -5,19 +5,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="/static/index.css">
 		
-		<title> index </title>
+		<title> Index </title>
+		<div id="menu">
+			<ul>
+				<li><a href="login">Login</a></li>
+			</ul>
+		</div>
 	</head>
 
 	<body>
-		<h4> Social Media crawler </h4>
-		<table>
-			<tr>
-				<th> test </th>
-				{% for f in fb %}
-				<td> {{f[0]}} </td>
-				{% endfor %}
-			</tr>
-		</table>
+		<center>
+		<h2>Social Media Crawler</h2>
+		<hr/>
+		<h4><i>Supportred Social Media</i></h4>
+		<ul>
+			<li> Facebook </li>
+			<li> Twitter </li>
+			<li> Google Plus </li>
+			<li> Flickr </li>
+			<li> Reddit </li>
+		</ul>
+		<hr/>
+		<h4><i>What results to expect?</i></h4>
+		<h5><u>Given the keyword you search for:</u></h5>
+		<ol>
+			<li>Facebook: top ten visited places</li>
+			<li>Twitter: the ten latest tweets</li>
+			<li>Google plus: the ten latest posts</li>
+			<li>Flickr: the ten latest photos</li>
+			<li>Reddit: top - most upvoted links that were posted on /r/all</li>
+		</ol>
+		<hr/>
+		<p><font size="2"><b>All results are categorised and provided 
+				with the form of urls</font></b></p>
+		</center>
 	</body>
 	
 </html>

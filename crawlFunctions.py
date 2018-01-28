@@ -96,6 +96,3 @@ def getReddit(keyword):
 	for s in sub.search(keyword, limit=10):
 		redditList.append(s.url)
 	return redditList
-
-x = getReddit("china")
-print(x)
