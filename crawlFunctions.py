@@ -88,8 +88,14 @@ def getReddit(keyword):
 	reddit.read_only = True
 	#print(reddit.read_only)
 	#with open("redditResults.txt", "w") as file:
-	for submission in reddit.subreddit(keyword).hot(limit=10):
-		#print(submission.url) #title
-		#file.write(submission.url + "\n")
-		redditList.append(submission.url)
+	#for submission in reddit.subreddit(keyword).hot(limit=10):
+	#	#print(submission.url) #title
+	#	#file.write(submission.url + "\n")
+	#	redditList.append(submission.url)
+	sub = reddit.subreddit("all")
+	for s in sub.search(keyword, limit=10):
+		redditList.append(s.url)
 	return redditList
+
+x = getReddit("china")
+print(x)

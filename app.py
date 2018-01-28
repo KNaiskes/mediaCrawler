@@ -35,6 +35,8 @@ def search():
 	global keyword
 	keyword = request.form.get("keyword")
 	print("Here is the keyword:", keyword)
+	if request.method == "POST":
+		return redirect(url_for("results"))
 
 	return render_template("search.html")
 				
@@ -48,7 +50,8 @@ def results():
 	flickr = getFlickr(keyword)
 	gplus = getGplus(keyword)
 	reddit = getReddit(keyword)
-	return render_template("results.html",fb=fb,tweets=tweets,flickr=flickr,gplus=gplus,reddit=reddit)
+	#return render_template("results.html",fb=fb,tweets=tweets,flickr=flickr,gplus=gplus,reddit=reddit)
+	return render_template("results.html", reddit=reddit) 
 
 
 if __name__ == "__main__":
