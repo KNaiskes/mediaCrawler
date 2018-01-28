@@ -50,8 +50,9 @@ def results():
 	flickr = getFlickr(keyword)
 	gplus = getGplus(keyword)
 	reddit = getReddit(keyword)
-	#return render_template("results.html",fb=fb,tweets=tweets,flickr=flickr,gplus=gplus,reddit=reddit)
-	return render_template("results.html", reddit=reddit) 
+	youtube = getYoutube(keyword)
+	return render_template("results.html",fb=fb,tweets=tweets,flickr=flickr,gplus=gplus,reddit=reddit,youtube=youtube)
+	#return render_template("results.html") 
 
 
 if __name__ == "__main__":

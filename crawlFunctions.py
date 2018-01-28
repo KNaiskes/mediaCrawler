@@ -74,6 +74,24 @@ def getGplus(keyword):
 				#file.write(activity["url"]+ "\n")
 	return gplusList
 
+def getYoutube(keyword):
+	youtubeList = []
+
+	from googleapiclient.discovery import build
+
+	api_key = GooglePlus_key #same key with g+
+	
+	youtube = build("youtube", "v3", developerKey=api_key)
+	search_response = youtube.search().list(q=keyword, maxResults=10, part="id,snippet").execute()
+
+	for search_result in search_response.get("items", []):
+		if search_result["id"]["kind"] == "youtube#video":
+			video_id = (search_result["id"]["videoId"])
+			video_id = "https://www.youtube.com/watch?v="+video_id
+			youtubeList.append(video_id)
+
+	return youtubeList
+
 def getReddit(keyword):
 	redditList = []
 	import praw

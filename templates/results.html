@@ -57,6 +57,16 @@
 		</ol>
 		</div>
 		</p>
+		<p>
+		<div id="youtube-results">
+		<ol>
+			<h3>Top videos on Youtube <li class="fa fa-youtube"></li></h3>
+		{% for yt in youtube %}
+		<li><h4><a href="{{yt}}"target="_blank">{{yt}}</a></h4></li>
+		{%endfor%}
+		</ol>
+		</div>
+		</p>
 
 	</body>
 	</html>
