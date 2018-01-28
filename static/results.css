@@ -1,0 +1,54 @@
+body {
+	background-color: #D2D4DC;
+	margin: 20px;
+	padding: 20px;
+}
+
+#fb-results { 
+	background-color: #5665D4;
+}
+
+#twitter-results {
+	background-color: #FFAE1F;
+}
+
+#gplus-results {
+	background-color: #2B4C6E;
+}
+
+#flickr-results {
+	background-color: #FFF4F0;
+}
+
+#reddit-results {
+	background-color: #2D4654;
+}
+
+#menu ul {
+
+	background-color: #264356;
+	margin:0;
+	padding:0;
+	position: relative;
+	list-style-type: none;
+	overflow: hidden;
+
+}
+
+#menu li {
+	list-style-type: none;
+	float: left;
+}
+
+#menu a {
+	color: #A6A6A6;
+	display: block;
+	text-align: center;
+	padding: 10px 10px;
+	width: 100%;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: #F6F6F6;
+}

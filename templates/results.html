@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, inital-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="/static/results.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title> Results </title>
+	</head>
+
+	<body>
+		<p>
+		<div id="fb-results">
+		<h3> Most visited places on Facebook  <li class="fa fa-facebook-official"></li></h3> 
+		<ol>
+		{% for f in fb %}
+		<li><h4><a href="{{f}}"target="_blank">{{f}}</a></h4></li>
+		{%endfor%}
+		</ol>
+		</div>
+		</p>
+		<p>
+		<div id="twitter-results">
+		<h3> Latest tweets on Twitter <li class="fa fa-twitter"></li></h3>
+		<ol>
+		{% for t in tweets %}
+		<li><h4><a href="{{t}}"target="_blank">{{t}}</a></h4></li>
+		{%endfor%}
+		</ol>
+		</div>
+		</p>
+		<p>
+		<div id="flickr-results">
+		<h3>Latest photos on Flickr <li class="fa fa-flickr"></li></h3>
+		<ol>
+		{% for fl in flickr%}
+		<li><h4><a href="{{fl}}"target="_blank">{{fl}}</a></h4></li>
+		{%endfor%}
+		</ol>
+		</div>
+		</p>
+		<p>
+		<div id="gplus-results">
+		<ol>
+		<li><h3>Latest posts on Google Plus <li class="fa fa-google-plus-official"></li></h3>
+		{% for g in gplus %}
+		<li><h4><a href="{{g}}"target="_blank">{{g}}</a></h4></li>
+		{%endfor%}
+		</div>
+		</p>
+		<p>
+		<div id="reddit-results">
+		<ol>
+		<h3>Latest posts on Reddit <li class="fa fa-reddit"></li></h3>
+		{% for r in reddit %}
+		<li><h4><a href="{{r}}"target="_blank">{{r}}</a></h4></li>
+		{%endfor%}
+		</ol>
+		</div>
+		</p>
+
+	</body>
+	</html>

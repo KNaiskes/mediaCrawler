@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, inital-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="/static/search.css">
+		<title> Search </title>
+	</head>
+
+	<body>
+		<center>
+			<form method="post" action="">
+				<p>
+				<input type="text" placeholder="Enter keyword" 
+		      name="keyword" value="{{request.form.keyword}}" required>
+				<input class="btn btn-default" type="submit"
+				   value="Search!">
+				</p>
+		</center>
+
+	</body>
+</html>
