@@ -125,10 +125,13 @@ def getReddit(keyword):
 			password = Reddit_password,
 			user_agent = Reddit_userAgent)
 
-	reddit.read_only = True
-	sub = reddit.subreddit("all")
-	for s in sub.search(keyword, limit=10):
-		links.append(s.url)
-		titles.append(s.title)
-	redditList = dict(zip(links, titles))
+	try:
+		reddit.read_only = True
+		sub = reddit.subreddit("all")
+		for s in sub.search(keyword, limit=10):
+			links.append(s.url)
+			titles.append(s.title)
+		redditList = dict(zip(links, titles))
+	except(ValueError, IndexError):
+		redditList
 	return redditList
