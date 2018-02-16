@@ -12,13 +12,9 @@
 		<div id="fb-results">
 		<h3> Most visited places on Facebook  <li class="fa fa-facebook-official"></li></h3> 
 		<ol>
-		{% if fb[0] is defined %}
-		{% for f in fb %}
-		<li><h4><a href="{{f}}"target="_blank">{{f}}</a></h4></li>
+		{% for key, value in fb.items() %}
+		<li><h4><a href="{{key}}"target="_blank">{{value}}</a></h4></li>
 		{%endfor%}
-		{% else %}
-		<center><h4>No data for your search (at least for the moment)</h4></center>
-		{% endif %}
 		</ol>
 		</div>
 		</p>
@@ -27,13 +23,9 @@
 		<div id="twitter-results">
 		<h3> Latest tweets on Twitter <li class="fa fa-twitter"></li></h3>
 		<ol>
-		{% if tweets[0] is defined %}
-		{% for t in tweets %}
-		<li><h4><a href="{{t}}"target="_blank">{{t}}</a></h4></li>
+		{% for key, value in tweets.items() %}
+		<li><h4><a href="{{key}}"target="_blank">{{value}}</a></h4></li>
 		{%endfor%}
-		{% else %}
-		<center><h4>No data for your search (at least for the moment)</h4></center>
-		{% endif %}
 		</ol>
 		</div>
 		</p>
@@ -42,13 +34,9 @@
 		<div id="flickr-results">
 		<h3>Latest photos on Flickr <li class="fa fa-flickr"></li></h3>
 		<ol>
-		{% if flickr[0] %}
-		{% for fl in flickr%}
-		<li><h4><a href="{{fl}}"target="_blank">{{fl}}</a></h4></li>
+		{% for key, value in flickr.items()%}
+		<li><h4><a href="{{key}}"target="_blank">{{value}}</a></h4></li>
 		{%endfor%}
-		{% else %}
-		<center><h4>No data for your search (at least for the moment)</h4></center>
-		{% endif %}
 		</ol>
 		</div>
 		</p>
@@ -57,13 +45,9 @@
 		<div id="gplus-results">
 		<ol>
 		<h3>Latest posts on Google Plus <li class="fa fa-google-plus-official"></h3>
-		{% if gplus[0] is defined %}
-		{% for g in gplus %}
-		<li><h4><a href="{{g}}"target="_blank">{{g}}</a></h4></li>
+		{% for key, value in gplus.items() %}
+		<li><h4><a href="{{key}}"target="_blank">{{value}}</a></h4></li>
 		{%endfor%}
-		{% else %}
-		<center><h4>No data for your search (at least for the moment)</h4></center>
-		{% endif %}
 		</div>
 		</p>
 
@@ -71,13 +55,9 @@
 		<div id="reddit-results">
 		<ol>
 		<h3>Latest posts on Reddit <li class="fa fa-reddit"></li></h3>
-		{% if reddit[0] is defined %}
-		{% for r in reddit %}
-		<li><h4><a href="{{r}}"target="_blank">{{r}}</a></h4></li>
+		{% for key, value in reddit.items() %}
+		<li><h4><a href="{{key}}"target="_blank">{{value}}</a></h4></li>
 		{%endfor%}
-		{% else %}
-		<center><h4>No data for your search (at least for the moment)</h4></center>
-		{% endif %}
 		</ol>
 		</div>
 		</p>
@@ -86,13 +66,9 @@
 		<div id="youtube-results">
 		<ol>
 			<h3>Top videos on Youtube <li class="fa fa-youtube"></li></h3>
-		{% if youtube[0] %}
-		{% for yt in youtube %}
-		<li><h4><a href="{{yt}}"target="_blank">{{yt}}</a></h4></li>
+		{% for key, value in youtube.items() %}
+		<li><h4><a href="{{key}}"target="_blank">{{value}}</a></h4></li>
 		{%endfor%}
-		{% else %}
-		<center><h4>No data for your search (at least for the moment)</h4></center>
-		{% endif %}
 		</ol>
 		</div>
 		</p>
