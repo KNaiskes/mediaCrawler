@@ -7,6 +7,6 @@ test:
   script:
   - apt-get update -qy
   - apt-get install -y python-dev python-pip
-  - apt-get install python3-flask
+  - apt-get install -y python3-flask
   - pip install -r requirements.txt
   - python3 app.py
