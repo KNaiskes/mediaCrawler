@@ -47,6 +47,11 @@ def results():
 	youtube = getYoutube(keyword)
 	return render_template("results.html",fb=fb,tweets=tweets,flickr=flickr,gplus=gplus,reddit=reddit,youtube=youtube)
 
+@app.route("/logout", methods=["GET", "POST"])
+def logout():
+	session.clear()
+	return render_template("index.html")
+
 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", debug=True)

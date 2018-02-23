@@ -119,5 +119,6 @@ h3 {
   color: white;
 }
 
-
-
+.logout { 
+	float: right;
+}
