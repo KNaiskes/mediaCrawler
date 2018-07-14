@@ -1,1 +1,1 @@
-My thesis for 2017-2018. Subject: "Social media crawler"
+A Social Media Web Crawler written in Python 3
