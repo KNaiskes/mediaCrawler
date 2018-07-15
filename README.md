@@ -1,4 +1,4 @@
-https://travis-ci.com/KNaiskes/mediaCrawler.svg?branch=master
+[![Build Status](https://travis-ci.com/KNaiskes/mediaCrawler.svg?branch=master)](https://travis-ci.com/KNaiskes/mediaCrawler)
 
 #### A Social Media Web Crawler written in Python 3
 
