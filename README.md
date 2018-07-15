@@ -1,3 +1,5 @@
+https://travis-ci.com/KNaiskes/mediaCrawler.svg?branch=master
+
 #### A Social Media Web Crawler written in Python 3
 
 
